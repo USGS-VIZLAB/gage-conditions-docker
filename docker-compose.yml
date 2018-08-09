@@ -1,0 +1,15 @@
+version: "3"
+services:
+  docker-image:
+    image: aapplingusgs/gage-conditions:0.1.0
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8787:8787"
+    volumes:
+      - "/D_DRIVE/APAData/Github/DS Vizzies/gage-conditions-docker:/home/rstudio/gage-conditions-docker"
+      - "/D_DRIVE/APAData/Github/DS Vizzies/gage-conditions:/home/rstudio/gage-conditions"
+    environment:
+      - ROOT=TRUE
+
