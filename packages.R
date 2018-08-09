@@ -3,7 +3,7 @@
 library(geojsonio) # install.packages('geojsonio')
 
 # from GRAN
-#options(repos=c('https://owi.usgs.gov/R', options()$repos))
+#options(repos=c(USGS='https://owi.usgs.gov/R', options()$repos))
 library(dataRetrieval) # install.packages('dataRetrieval')
 library(sbtools) # install.packages('sbtools')
 

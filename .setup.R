@@ -16,13 +16,6 @@ packrat::set_opts(
   load.external.packages.on.startup=FALSE
 )
 
-# Copy the rocker packages into packrat/lib-ext because file.symlink isn't working with Docker
-packdir <- 'packrat/lib-ext/x86_64-pc-linux-gnu/3.5.1'
-for(pkg in rocker_pkgs) {
-  usrdir <- find.package(pkg, lib.loc=packrat:::getDefaultLibPaths())
-  file.copy(usrdir, packdir, overwrite=TRUE, recursive=TRUE)
-}
-
 # set up Git LFS
 # git lfs track "packrat/src/*"
 # git add .gitattributes

@@ -18,17 +18,17 @@ RUN sudo npm install -g\
 # use packrat and file.copy to add packages to the image
 RUN mkdir /home/rstudio/gage-conditions-docker
 VOLUME /home/rstudio/gage-conditions-docker
-#RUN R --args --bootstrap-packrat -e\
-#  "setwd('/home/rstudio/gage-conditions-docker');\
-#  packrat::packrat_mode(on=TRUE);\
-#  usrlib <- tail(.libPaths(), 1);\
-#  packrat::restore(overwrite.dirty=TRUE, prompt=FALSE);\
-#  srclib <- packrat::lib_dir();\
-#  pkgs <- dir(srclib, full.names=TRUE);\
-#  lapply(pkgs, function(pkg) {\
-#    file.copy(pkg, usrlib, recursive=TRUE, overwrite=TRUE);\
-#  });\
-#  setwd('..');"
+RUN R --args --bootstrap-packrat -e\
+  "setwd('/home/rstudio/gage-conditions-docker');\
+  packrat::packrat_mode(on=TRUE);\
+  usrlib <- tail(.libPaths(), 1);\
+  packrat::restore(overwrite.dirty=TRUE, prompt=FALSE);\
+  srclib <- packrat::lib_dir();\
+  pkgs <- dir(srclib, full.names=TRUE);\
+  lapply(pkgs, function(pkg) {\
+    file.copy(pkg, usrlib, recursive=TRUE, overwrite=TRUE);\
+  });\
+  setwd('..');"
 
 # for use when developing the vizzy project: volume mapping
 # allows you to directly edit the project files on your computer
