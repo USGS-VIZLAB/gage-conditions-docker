@@ -23,6 +23,7 @@ external.packages:
     assertive.types
     assertthat
     backports
+    base
     base64enc
     BH
     bindr
@@ -32,10 +33,12 @@ external.packages:
     bit64
     bitops
     blob
+    bmp
     bookdown
     boot
     brew
     broom
+    Cairo
     callr
     caTools
     cellranger
@@ -47,12 +50,15 @@ external.packages:
     codetools
     colorspace
     commonmark
+    compiler
     concaveman
     covr
     crayon
     crosstalk
     curl
     data.table
+    dataRetrieval
+    datasets
     DBI
     dbplyr
     deldir
@@ -61,6 +67,7 @@ external.packages:
     dichromat
     digest
     docopt
+    downloader
     dplyr
     DT
     dtplyr
@@ -78,9 +85,12 @@ external.packages:
     gdalUtils
     gdata
     gdtools
+    geojson
+    geojsonio
     geometry
     geoR
     geosphere
+    getopt
     ggplot2
     git2r
     globals
@@ -88,7 +98,11 @@ external.packages:
     gmailr
     gmodels
     goftest
+    graphics
+    grDevices
+    grid
     gridExtra
+    grithub
     gstat
     gtable
     gtools
@@ -102,8 +116,11 @@ external.packages:
     httr
     hunspell
     igraph
+    imager
     intervals
     iterators
+    jpeg
+    jqr
     jsonlite
     KernSmooth
     knitr
@@ -133,6 +150,7 @@ external.packages:
     MASS
     Matrix
     memoise
+    methods
     mgcv
     microbenchmark
     mime
@@ -144,7 +162,9 @@ external.packages:
     nlme
     nycflights13
     openssl
+    optparse
     packrat
+    parallel
     pillar
     pingr
     pkgbuild
@@ -160,6 +180,7 @@ external.packages:
     processx
     proj4
     promises
+    protolite
     purrr
     R.methodsS3
     R.oo
@@ -172,8 +193,10 @@ external.packages:
     RColorBrewer
     Rcpp
     RCurl
+    readbitmap
     readr
     readxl
+    remake
     rematch
     remotes
     reprex
@@ -191,6 +214,7 @@ external.packages:
     rmdshower
     RMySQL
     RNetCDF
+    Rook
     roxygen2
     rpart
     RPostgreSQL
@@ -202,6 +226,7 @@ external.packages:
     rversions
     rvest
     satellite
+    sbtools
     scales
     selectr
     servr
@@ -217,10 +242,15 @@ external.packages:
     spData
     spdep
     splancs
+    splines
+    stats
+    stats4
+    storr
     stringdist
     stringi
     stringr
     svglite
+    tcltk
     tensor
     testit
     testthat
@@ -228,16 +258,20 @@ external.packages:
     tidyr
     tidyselect
     tidyverse
+    tiff
     tinytex
     tmap
     tmaptools
+    tools
     tufte
     units
     utf8
+    utils
     uuid
     V8
     viridis
     viridisLite
+    vizlab
     webshot
     whisker
     withr
@@ -248,20 +282,6 @@ external.packages:
     xts
     yaml
     zoo
-    base
-    compiler
-    datasets
-    graphics
-    grDevices
-    grid
-    methods
-    parallel
-    splines
-    stats
-    stats4
-    tcltk
-    tools
-    utils
 local.repos: 
 load.external.packages.on.startup: FALSE
 ignored.packages:
@@ -284,6 +304,7 @@ ignored.packages:
     assertive.types
     assertthat
     backports
+    base
     base64enc
     BH
     bindr
@@ -293,10 +314,12 @@ ignored.packages:
     bit64
     bitops
     blob
+    bmp
     bookdown
     boot
     brew
     broom
+    Cairo
     callr
     caTools
     cellranger
@@ -308,12 +331,15 @@ ignored.packages:
     codetools
     colorspace
     commonmark
+    compiler
     concaveman
     covr
     crayon
     crosstalk
     curl
     data.table
+    dataRetrieval
+    datasets
     DBI
     dbplyr
     deldir
@@ -322,6 +348,7 @@ ignored.packages:
     dichromat
     digest
     docopt
+    downloader
     dplyr
     DT
     dtplyr
@@ -339,9 +366,12 @@ ignored.packages:
     gdalUtils
     gdata
     gdtools
+    geojson
+    geojsonio
     geometry
     geoR
     geosphere
+    getopt
     ggplot2
     git2r
     globals
@@ -349,7 +379,11 @@ ignored.packages:
     gmailr
     gmodels
     goftest
+    graphics
+    grDevices
+    grid
     gridExtra
+    grithub
     gstat
     gtable
     gtools
@@ -363,8 +397,11 @@ ignored.packages:
     httr
     hunspell
     igraph
+    imager
     intervals
     iterators
+    jpeg
+    jqr
     jsonlite
     KernSmooth
     knitr
@@ -394,6 +431,7 @@ ignored.packages:
     MASS
     Matrix
     memoise
+    methods
     mgcv
     microbenchmark
     mime
@@ -405,7 +443,9 @@ ignored.packages:
     nlme
     nycflights13
     openssl
+    optparse
     packrat
+    parallel
     pillar
     pingr
     pkgbuild
@@ -421,6 +461,7 @@ ignored.packages:
     processx
     proj4
     promises
+    protolite
     purrr
     R.methodsS3
     R.oo
@@ -433,8 +474,10 @@ ignored.packages:
     RColorBrewer
     Rcpp
     RCurl
+    readbitmap
     readr
     readxl
+    remake
     rematch
     remotes
     reprex
@@ -452,6 +495,7 @@ ignored.packages:
     rmdshower
     RMySQL
     RNetCDF
+    Rook
     roxygen2
     rpart
     RPostgreSQL
@@ -463,6 +507,7 @@ ignored.packages:
     rversions
     rvest
     satellite
+    sbtools
     scales
     selectr
     servr
@@ -478,10 +523,15 @@ ignored.packages:
     spData
     spdep
     splancs
+    splines
+    stats
+    stats4
+    storr
     stringdist
     stringi
     stringr
     svglite
+    tcltk
     tensor
     testit
     testthat
@@ -489,16 +539,20 @@ ignored.packages:
     tidyr
     tidyselect
     tidyverse
+    tiff
     tinytex
     tmap
     tmaptools
+    tools
     tufte
     units
     utf8
+    utils
     uuid
     V8
     viridis
     viridisLite
+    vizlab
     webshot
     whisker
     withr
@@ -509,20 +563,6 @@ ignored.packages:
     xts
     yaml
     zoo
-    base
-    compiler
-    datasets
-    graphics
-    grDevices
-    grid
-    methods
-    parallel
-    splines
-    stats
-    stats4
-    tcltk
-    tools
-    utils
 ignored.directories:
     data
     inst
