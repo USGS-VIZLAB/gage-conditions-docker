@@ -1,3 +1,5 @@
+# Here are the lines I ran to initialize the project for packrat and git LFS
+
 # This file, and any others named beginning with '.', are ignored by packrat
 
 # Decide which packages are already available on rocker/geospatial:3.5.1 and
@@ -34,7 +36,6 @@ success <- sapply(rocker_pkgs, function(pkg) {
   }
 })
 
-
-# set up Git LFS
+# set up Git LFS (run in terminal)
 # git lfs track "packrat/src/*"
 # git add .gitattributes
