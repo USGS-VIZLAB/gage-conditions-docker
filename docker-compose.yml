@@ -1,6 +1,6 @@
 version: "3"
 services:
-  docker-image:
+  docker-dev-mode:
     image: aapplingusgs/gage-conditions:0.2.0
     build:
       context: .
