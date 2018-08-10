@@ -1,8 +1,8 @@
 version: "3"
 services:
   docker-image:
-    image: aapplingusgs/gage-conditions:0.1.0
-    build: 
+    image: aapplingusgs/gage-conditions:0.2.0
+    build:
       context: .
       dockerfile: Dockerfile
     ports:
