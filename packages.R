@@ -1,9 +1,11 @@
+# Below are the packages we need for the vizzy, organized by source location,
+# and with comments with the code we used to install them. (The comments are useful to us humans, not required)
 
 # from CRAN
 library(geojsonio) # install.packages('geojsonio')
 
 # from GRAN
-#options(repos=c(USGS='https://owi.usgs.gov/R', options()$repos))
+#options(repos=c(USGS='https://owi.usgs.gov/R', CRAN=options()$repos[['CRAN']]))
 library(dataRetrieval) # install.packages('dataRetrieval')
 library(sbtools) # install.packages('sbtools')
 

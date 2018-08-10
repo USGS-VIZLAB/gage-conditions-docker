@@ -11,10 +11,29 @@ rocker_pkgs <- c('abind', 'assertive', 'assertive.base', 'assertive.code', 'asse
 library(packrat)
 packrat::init()
 packrat::set_opts(
-  external.packages=rocker_pkgs, # file.symlink() won't let us point to /usr/local/lib because it's read-only, so don't bother
+  external.packages=rocker_pkgs,
   ignored.packages=rocker_pkgs,
   load.external.packages.on.startup=FALSE
 )
+
+# Create additional symlinks from the system library to the packrat/lib
+# directory for those packages that are dependencies of GRAN or GitHub packages. This helps with packrat::snapshot(), which throws errors if there are packages in packrat/lib that depend on packages in packrat/lib-ext (the system lib)
+# So that we don't have to re-run this every time we add a package, just copy all rocker_packages
+ext_details <- utils::installed.packages(packrat:::getDefaultLibPaths())
+pack_lib <- grep('/lib/', packrat:::getLibPaths(), value=TRUE)
+success <- sapply(rocker_pkgs, function(pkg) {
+  source <- file.path(ext_details[pkg,'LibPath'], pkg)
+  target <- file.path(pack_lib, pkg)
+  if(!file.exists(target)) {
+    message('symlinking ', pkg)
+    if(!packrat:::ensurePackageSymlink(source, target)) { # produces T/F about success
+      stop('failed to symlink ', pkg)
+    }
+  } else {
+    return(NA)
+  }
+})
+
 
 # set up Git LFS
 # git lfs track "packrat/src/*"
