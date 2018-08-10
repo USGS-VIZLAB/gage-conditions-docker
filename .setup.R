@@ -1,4 +1,6 @@
-# Here are the lines I ran to initialize the project for packrat and git LFS
+# Here are the lines I ran to initialize the project for packrat and git LFS.
+# The symlinks section will need to be run once for each new computer where
+# we're developing docker images
 
 # This file, and any others named beginning with '.', are ignored by packrat
 
