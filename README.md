@@ -155,6 +155,8 @@ To build or rebuild the docker image, first check in the docker-compose.yml to m
 docker-compose build
 ```
 
+The custom R packages are handled in the Dockerfile in the `COPY` line that copies files from your local `./packrat/lib` into the system lib folder on the docker container.
+
 ## Publishing the image
 
 Push your image to Docker Hub as soon as you're ready for others to access it.
@@ -203,18 +205,7 @@ git add .gitattributes
 
 These lines need to go in the Dockerfile, and then all the package installation will be taken care of by packrat rather than package-specific calls in the Dockerfile.
 ```sh
-# inspired by https://github.com/rstudio/packrat/issues/373#issue-229641017 and https://stackoverflow.com/questions/39009579/using-r-package-source-files-in-packrat-rather-than-cran-with-travis-ci:
-RUN R --args --bootstrap-packrat -e\
-  "setwd('/home/rstudio/gage-conditions-docker');\
-  packrat::packrat_mode(on=TRUE);\
-  usrlib <- tail(.libPaths(), 1);\
-  packrat::restore(overwrite.dirty=TRUE, prompt=FALSE);\
-  srclib <- packrat::lib_dir();\
-  pkgs <- dir(srclib, full.names=TRUE);\
-  lapply(pkgs, function(pkg) {\
-    file.copy(pkg, usrlib, recursive=TRUE, overwrite=TRUE);\
-  });\
-  setwd('..');"
+COPY ./packrat/lib/x86_64-pc-linux-gnu/3.5.1/ /usr/local/lib/R/library
 ```
 
 ## Initializing the Docker image
