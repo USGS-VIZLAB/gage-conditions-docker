@@ -14,10 +14,12 @@ RUN sudo npm install -g\
   webpack-cli\
   d3-geo-projection
 
-# for use when building the docker image:
-# use packrat and file.copy to add packages to the image
+# for use when building the docker image: mapping to this docker-building repo
 RUN mkdir /home/rstudio/gage-conditions-docker
 VOLUME /home/rstudio/gage-conditions-docker
+
+# you should have run packrat::restore() from within the container today,
+# which will allow this line to install up-to-date packages into the image.
 COPY ./packrat/lib/x86_64-pc-linux-gnu/3.5.1/ /usr/local/lib/R/library
 
 # for use when developing the vizzy project: volume mapping
