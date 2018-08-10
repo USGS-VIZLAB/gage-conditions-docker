@@ -119,6 +119,13 @@ Next, in your browser, navigate to `localhost:8787` <win7>In Windows 7, replace 
 
 In the RStudio Files pane, click on your project directory and then on the project .proj file to open your project as an RStudio project. When you open `gage-conditions-docker`, simply opening the project will launch packrat mode (because we've already called `packrat::init()` to modify the `.Rprofile` for this purpose).
 
+Start by getting your local packrat/lib up to date with the packrat/packrat.lock file, which you may have pulled from GitHub with changes:
+```r
+packrat::restore()
+```
+
+Run the symlink-creation code found in .update.R. Really, you can just walk through that file to get all this packrat stuff done.
+
 Add each new R package you want by (1) installing it with `install.packages` or `devtools::install_github`, and (2) adding a `library(pkg)` call to packages.R.
 
 Once all the new packages are installed and libraried, call
@@ -126,6 +133,8 @@ Once all the new packages are installed and libraried, call
 packrat::snapshot()
 ```
 to update the `packrat` directory with information about the packages you've installed. This call changes the `packrat/packrat.lock` file.
+
+Run the symlink-deletion code found in .update.R. This will be important the next time you try to call `packrat::restore()`.
 
 Stop the docker container when you're done.
 ```
