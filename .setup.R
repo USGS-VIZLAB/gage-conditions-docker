@@ -30,7 +30,7 @@ packrat::set_opts(
 # time we add a package, just copy all rocker_packages
 ext_details <- utils::installed.packages(packrat:::getDefaultLibPaths())
 pack_lib <- grep('/lib/', packrat:::getLibPaths(), value=TRUE)
-success <- sapply(c(rocker_pkgs, R_pkgs), function(pkg) {
+success <- sapply(rocker_pkgs, function(pkg) {
   source <- file.path(ext_details[pkg,'LibPath'], pkg)
   target <- file.path(pack_lib, pkg)
   if(!file.exists(target)) {
@@ -43,6 +43,20 @@ success <- sapply(c(rocker_pkgs, R_pkgs), function(pkg) {
     return(NA)
   }
 })
+
+# Run this after you've installed+libraried any new packages
+packrat::snapshot()
+
+# Once you're done adding packages and snapshotting, remove those symlinks
+success <- sapply(rocker_pkgs, function(pkg) {
+  symlink <- file.path(pack_lib, pkg)
+  is.symlink <- !is.na(Sys.readlink(symlink)) && (Sys.readlink(symlink) != "")
+  if(is.symlink) {
+    message('removing symlink for ', pkg)
+    unlink(symlink)
+  }
+})
+
 
 # set up Git LFS (run in terminal)
 # git lfs track "packrat/src/*"
