@@ -262,6 +262,20 @@ external.packages:
     tcltk
     tools
     utils
+    base
+    compiler
+    datasets
+    graphics
+    grDevices
+    grid
+    methods
+    parallel
+    splines
+    stats
+    stats4
+    tcltk
+    tools
+    utils
 local.repos: 
 load.external.packages.on.startup: FALSE
 ignored.packages:
@@ -509,6 +523,20 @@ ignored.packages:
     xts
     yaml
     zoo
+    base
+    compiler
+    datasets
+    graphics
+    grDevices
+    grid
+    methods
+    parallel
+    splines
+    stats
+    stats4
+    tcltk
+    tools
+    utils
     base
     compiler
     datasets
